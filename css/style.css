@@ -1,0 +1,382 @@
+
+html, body {
+  margin:0;
+  padding:0;
+}
+
+
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+a {
+  color: #000;
+}
+
+/* header */
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+
+
+#headline {
+  padding: 50px;
+  color: white;
+  height: 200px;
+  width: 300px;
+  background-color: rgba(153, 182, 211, 0.8);
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+#headline h2 {
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#headline h3 {
+  font-size: 12px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: lighter;
+  line-height: 24px;
+}
+
+#headline button {
+  width: 150px;
+  height: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 10px;
+}
+
+.h1 {
+  color: white;
+  letter-spacing: 200px;
+  font-family:sans-serif;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+
+
+#footer {
+  background-color:#bdccd4;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: right;
+  font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#footer .nav-list {
+  list-style-type: none;
+}
+
+#footer .list-item {
+  align-items: right;
+}
+
+#footer .nav-list .list-item {
+  display: inline-flex;
+  padding: 20px 20px;
+  align-items: right;
+}
+
+
+#footer .nav-list a {
+  color: white;
+  text-decoration: none;
+}
+
+#footer .nav-list a:hover {
+  color: royalblue;
+}
+
+
+
+
+@media all and (max-width: 600px) {
+
+  .subsection {
+      display: inline-flex;
+      height: 300px;
+      width: 300px;
+      justify-content:space-around;
+      align-items: center;
+      background-color: #bdccd4;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      overflow: hidden;
+      flex-direction: column;
+  }
+
+}
+
+@media all and (max-width: 1000px) {
+  #services {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+  }
+
+  .subsection {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+
+
+
+
+.section {
+  min-height: 400px;
+  overflow: hidden;
+  padding-top: 80px;
+  /*position:relative;*/
+  background-size: cover;
+  background-position: center center;
+}
+
+#contact  {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#about {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#work {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+#casestudy  {
+    display: inline-block;
+    list-style-type: none;
+    align-items: center center;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+.subsection {
+  display: inline-block;
+  height: 300px;
+  width:300px;
+  align-items: center;
+  background-color: #bdccd4;
+}
+
+#services {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+.subsection h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 24px;
+  font-weight:lighter;
+  align-items: center;
+  color: white;
+  position: center;
+}
+
+.subsection p {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: white;
+  position: center;
+  align-content: center;
+  margin: 50px;
+  
+}
+
+#heroimg {
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  padding:25px;
+  background-image: url(../images/golden-retriever.jpg);
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+#home {
+  background-color: cadetblue;
+}
+
+
+#about {
+background-color: #bdccd4;
+}
+
+#work {
+background-color: #bdccd4;
+margin: 0 auto;
+justify-content: center;
+}
+
+#contact {
+background-color: white;
+}
+
+.title {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 50px;
+  overflow: hidden;
+
+}
+
+.logoContainer img {
+  height: 60px;
+}
